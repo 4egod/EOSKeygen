@@ -7,7 +7,36 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<TextBlock Text="Hello, world !" Margin="20" FontSize="30" />
-    </Grid>
+  <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.RowSpan="2" VerticalAlignment="Stretch">
+      <StackPanel Orientation="Vertical">
+        <TextBlock Text="EOS KEY PAIR GENERATION TOOL" HorizontalAlignment="Center" Margin="0, 20, 0, 0" FontSize="19" FontWeight="Bold"/>
+        <TextBlock FontSize="18" Text="Keep this page offline while generating new key" HorizontalAlignment="Center" Margin="10"/>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal" Height="70" HorizontalAlignment="Center">
+        <TextBlock FontSize="18" FontWeight="Bold" Text="Public key: " Margin="0,10,0,10" VerticalAlignment="Center"/>
+        <TextBox FontSize="18" FontWeight="SemiBold" Name="tpub" Width="610" IsReadOnly="True" Margin="5,10,0,10" VerticalAlignment="Center"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" Height="70" HorizontalAlignment="Center">
+        <TextBlock FontSize="18" FontWeight="Bold" Text="Private key: " Margin="0, 10, 0, 10" VerticalAlignment="Center"/>
+        <TextBox FontSize="18" FontWeight="SemiBold" Name="tpvt" Width="610" IsReadOnly="True" Margin="5,10,0,10" VerticalAlignment="Center"/>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <Button Margin="10" FontSize="18" Content="Generate K1 Key Pair" Click="Button_Click"  VerticalAlignment="Center"/>
+        <Button Margin="10" FontSize="18" Content="Generate R1 Key Pair" Click="Button_Click_1"  VerticalAlignment="Center"/>
+      </StackPanel>
+      <StackPanel Orientation="Vertical" Width="710">
+        <TextBlock Foreground="Gray" FontSize="19" Margin="0, 20, 0, 10" Text="WHAT ARE THE PUBLIC AND PRIVATE KEYS?" />
+        <TextBlock Foreground="Gray" FontSize="18" TextWrapping="WrapWholeWords" Text="Each EOS account is secured with EOS public and private keys. Every public key is in turn linked to a private key. A private key can always be used to generate its associated public key, but not vice versa. (A private key and its associated public key make up a key pair.)" />
+        <TextBlock Foreground="Gray" FontSize="18" Margin="0, 10, 0, 0" TextWrapping="WrapWholeWords" Text="All your public keys are visible by everyone using the network. The private keys, however, should never be shared or given away. You must store your private keys in a wallet you trust and not given to anyone else."/>
+
+      </StackPanel>
+      <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Margin="10" Content="GetInfo" Click="Button_Click_1" HorizontalAlignment="Center" />
+                <TextBox Name="t2" Text="Address" Width="500" IsReadOnly="True" Margin="10" VerticalAlignment="Center"/>
+        </StackPanel>-->
+    </StackPanel>
+  </Grid>
 </Page>

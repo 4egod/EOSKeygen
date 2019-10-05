@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Eos.Cryptography;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,22 @@ namespace EOSKeygen
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            KeyPair kp = new KeyPair(KeyTypes.K1);
+
+            tpub.Text = kp.PublicKey.ToString();
+            tpvt.Text = kp.PrivateKey.ToString();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            KeyPair kp = new KeyPair(KeyTypes.R1);
+
+            tpub.Text = kp.PublicKey.ToString();
+            tpvt.Text = kp.PrivateKey.ToString();
         }
     }
 }
